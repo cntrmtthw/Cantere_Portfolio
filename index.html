@@ -7,7 +7,7 @@
 <meta name="description" content="Online portfolio of Jomar Matthew B. Cantere, Information Technology student at Quezon City University.">
 <meta property="og:title" content="Jomar Matthew B. Cantere | Portfolio">
 <meta property="og:description" content="Information Technology student. Video editing, graphic design, project management.">
-<meta property="og:image" content="images/profile.png">
+<meta property="og:image" content="profile.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap" rel="stylesheet">
@@ -92,7 +92,7 @@ dt{font-weight:700;padding-right:2rem}
 .film{border:2px solid var(--paper);padding:34px 0;position:relative;
 background:repeating-linear-gradient(90deg,#fff 0 14px,transparent 14px 34px) 12px 9px/100% 14px no-repeat,
 repeating-linear-gradient(90deg,#fff 0 14px,transparent 14px 34px) 12px calc(100% - 9px)/100% 14px no-repeat}
-.stage{position:relative;min-height:400px;overflow:hidden}
+.stage{position:relative;min-height:470px;overflow:hidden}
 .slide{position:absolute;inset:0;padding:1.5rem 2.5rem;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:2rem 3rem;align-items:center;opacity:0;visibility:hidden;transform:translateX(70px);transition:opacity .6s,transform .8s cubic-bezier(.2,.8,.2,1),visibility 0s .8s}
 .slide.active{opacity:1;visibility:visible;transform:none;transition-delay:0s}
 .slide.out{transform:translateX(-70px)}
@@ -101,15 +101,15 @@ repeating-linear-gradient(90deg,#fff 0 14px,transparent 14px 34px) 12px calc(100
 .slide h3{font-weight:900;font-stretch:100%;font-size:clamp(1.4rem,3vw,2.1rem);line-height:1.15;margin-bottom:.8rem}
 .slide p{color:#d9d9d9}
 .pics{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(0,1fr))}
-.pics img{width:100%;height:auto;border:2px solid #fff;background:#fff;filter:contrast(1.1)}
+.pics a{display:block}.pics img{width:100%;height:auto;border:2px solid #fff;background:#fff;filter:grayscale(1) contrast(1.05);transition:filter .5s,transform .5s}.pics a:hover img{filter:none;transform:scale(1.02)}
 .slide.active .pics img{animation:pop .8s .15s cubic-bezier(.2,.8,.2,1) both}
 .slide.active .pics img:nth-child(2){animation-delay:.3s}
 @keyframes pop{from{opacity:0;transform:translateY(24px) scale(.97)}to{opacity:1;transform:none}}
 .bar{height:4px;background:#333;margin:1.5rem 0 1rem}
 .bar i{display:block;height:100%;width:0;background:#fff;transition:width .6s cubic-bezier(.2,.8,.2,1)}
-.thumbs{display:grid;grid-template-columns:repeat(7,1fr);gap:.6rem}
+.thumbs{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem}
 .thumbs button{border:2px solid #666;background:#fff;padding:0;cursor:pointer;opacity:.45;transition:opacity .25s,border-color .25s,transform .25s}
-.thumbs button img{width:100%;height:auto;filter:grayscale(1)}
+.thumbs button img{display:block;width:100%;height:auto;filter:grayscale(1)}
 .thumbs button:hover{opacity:.85;transform:translateY(-4px)}
 .thumbs button[aria-current="true"]{opacity:1;border-color:#fff}
 .full{margin-top:2rem}
@@ -125,8 +125,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
 /* reveal */
 .rv{opacity:0;transform:translateY(36px);transition:opacity .8s cubic-bezier(.2,.8,.2,1),transform .8s cubic-bezier(.2,.8,.2,1)}
 .rv.in{opacity:1;transform:none}
-@media(max-width:900px){.rail{display:none}.hero-grid,.grid,.slide{grid-template-columns:1fr}.edu li{grid-template-columns:1fr}.stage{min-height:560px}.slide{padding:1rem 1.25rem}nav a{margin:0 1rem 0 0}}
-@media(max-width:560px){.stage{min-height:620px}.tc{display:none}}
+@media(max-width:900px){.rail{display:none}.hero-grid,.grid,.slide{grid-template-columns:1fr}.edu li{grid-template-columns:1fr}.stage{min-height:660px}.slide{padding:1rem 1.25rem}nav a{margin:0 1rem 0 0}}
+@media(max-width:560px){.stage{min-height:640px}.tc{display:none}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.hero h1 .ln span{transform:none}.crop .frame{clip-path:none}.rv{opacity:1;transform:none}}
 </style>
 </head>
@@ -155,7 +155,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
       </div>
     </div>
     <figure class="crop">
-      <div class="frame"><img src="images/profile.png" alt="Portrait of Jomar Matthew B. Cantere in a dark suit and striped tie" width="448" height="447"></div>
+      <div class="frame"><img src="profile.png" alt="Portrait of Jomar Matthew B. Cantere in a dark suit and striped tie" width="448" height="447"></div>
       <figcaption>Jomar Matthew B. Cantere</figcaption>
     </figure>
   </div>
@@ -192,7 +192,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
   </div>
 </section>
 
-<section id="achievements">
+<section id="achievements" class="inv">
   <div class="wrap">
     <div class="ach-head">
       <h2>Achievements</h2>
@@ -204,7 +204,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
     <div class="film"><div class="stage" id="stage" aria-live="polite"></div></div>
     <div class="bar" aria-hidden="true"><i id="fill"></i></div>
     <div class="thumbs" id="thumbs" role="group" aria-label="Choose achievement"></div>
-    <p class="full"><a href="images/achievements-all.png">Open all achievements in one image</a></p>
+    <p class="full">Select a certificate to open it full size. Hover to see it in color.</p>
   </div>
 </section>
 
@@ -237,22 +237,18 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
 <script>
 (function(){
 var A=[
- {t:"Introduction to Modern AI",k:"Course",d:"Issued Oct 12, 2026",p:"Earned a verified badge and a certificate.",i:["modern-ai-badge","modern-ai-certificate"]},
- {t:"Introduction to Data Science",k:"Course",d:"Issued Mar 17, 2026",p:"Earned a verified badge and a certificate.",i:["data-science-badge","data-science-certificate"]},
- {t:"Data Careers",k:"Module achievement",d:"Issued Mar 17, 2026",p:"Completed this module.",i:["module-data-careers"]},
- {t:"Artificial Intelligence and Machine Learning Concepts",k:"Module achievement",d:"Issued Mar 17, 2026",p:"Completed this module.",i:["module-ai-ml"]},
- {t:"Data Collection",k:"Module achievement",d:"Issued Mar 17, 2026",p:"Completed this module.",i:["module-data-collection"]},
- {t:"Basics of Analytics",k:"Module achievement",d:"Issued Mar 17, 2026",p:"Completed this module.",i:["module-analytics"]},
- {t:"AI Fundamentals with IBM SkillsBuild",k:"Course",d:"Issued Mar 03, 2026",p:"Earned a verified badge and a certificate.",i:["ibm-ai-badge","ibm-ai-certificate"]}
+ {t:"Introduction to Modern AI",k:"Certificate",d:"Completed Oct 12, 2026",p:"Offered by Networking Academy through the Cisco Networking Academy program.",f:"cert_intro_ai.png"},
+ {t:"Introduction to Data Science",k:"Certificate",d:"Completed Mar 17, 2026",p:"Offered by Networking Academy through the Cisco Networking Academy program.",f:"cert_intro_ds.png"},
+ {t:"AI Fundamentals with IBM SkillsBuild",k:"Certificate",d:"Completed Mar 03, 2026",p:"Offered by Networking Academy through the Cisco Networking Academy program.",f:"cert_intro_ibm.png"}
 ];
 var stage=document.getElementById('stage'),th=document.getElementById('thumbs'),fill=document.getElementById('fill'),cur=0,S=[],T=[];
 A.forEach(function(a,i){
-  var n=String(i+1).padStart(2,'0'),pics=a.i.map(function(f){return '<img src="images/'+f+'.png" alt="'+a.t+' ('+(f.indexOf('certificate')>-1?'certificate':f.indexOf('badge')>-1?'badge':'module')+')" loading="lazy">'}).join('');
+  var n=String(i+1).padStart(2,'0');
   var d=document.createElement('article');d.className='slide';
-  d.innerHTML='<div><div class="no">'+n+'</div><span class="kind">'+a.k+'</span><h3>'+a.t+'</h3><p>'+a.p+'</p><p><strong>'+a.d+'</strong></p></div><div class="pics">'+pics+'</div>';
+  d.innerHTML='<div><div class="no">'+n+'</div><span class="kind">'+a.k+'</span><h3>'+a.t+'</h3><p>'+a.p+'</p><p><strong>'+a.d+'</strong></p></div><div class="pics"><a href="'+a.f+'" target="_blank" rel="noopener" aria-label="Open full size certificate: '+a.t+'"><img src="'+a.f+'" alt="Certificate of completion: '+a.t+', awarded to Jomar Matthew Cantere"></a></div>';
   stage.appendChild(d);S.push(d);
   var b=document.createElement('button');b.type='button';b.setAttribute('aria-label','Achievement '+(i+1)+': '+a.t);
-  b.innerHTML='<img src="images/'+a.i[0]+'.png" alt="" loading="lazy">';b.onclick=function(){go(i)};th.appendChild(b);T.push(b);
+  b.innerHTML='<img src="'+a.f+'" alt="">';b.onclick=function(){go(i)};th.appendChild(b);T.push(b);
 });
 function go(i){
   i=(i+A.length)%A.length;var old=S[cur];
